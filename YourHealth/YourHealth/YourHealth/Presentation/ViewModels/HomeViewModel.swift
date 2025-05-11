@@ -69,6 +69,14 @@ class HomeViewModel: ObservableObject {
     }
     
     func fetchTodayExerciseTime() {
+        healthManager.fetchTodayExerciseTime { result in
+            switch result {
+            case .success(let exercise):
+                self.exercise = Int(exercise)
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
         
     }
     

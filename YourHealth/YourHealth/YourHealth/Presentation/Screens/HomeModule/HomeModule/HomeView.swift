@@ -34,43 +34,13 @@ struct HomeView: View {
                             .foregroundStyle(Color.glassTextPrimary)
 
                         HStack(alignment: .center) {
-                            VStack(alignment: .leading, spacing: 10) {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Move")
-                                        .font(.callout)
-                                        .bold()
-                                        .foregroundStyle(Color.glassTextPrimary)
-                                    Text("\(Int(viewModel.moveCalories))")
-                                        .bold()
-                                        .foregroundStyle(Color.red)
-                                }
-
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Exercise")
-                                        .font(.callout)
-                                        .bold()
-                                        .foregroundStyle(Color.glassTextPrimary)
-                                    Text("\(Int(viewModel.exercise))")
-                                        .bold()
-                                        .foregroundStyle(Color.green)
-                                }
-
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Stand")
-                                        .font(.callout)
-                                        .bold()
-                                        .foregroundStyle(Color.glassTextPrimary)
-                                    Text("\(Int(viewModel.stand))")
-                                        .bold()
-                                        .foregroundStyle(Color.blue)
-                                }
-                            }
+                            ActivityRingsInfoView()
 
                             Spacer() 
 
                             // Права частина з кільцем
                             ActivityRingsView(viewModel: viewModel)
-                                .frame(width: 160, height: 200) // 👈 Обов'язковий розмір
+                                .frame(width: 160, height: 240) //  Обов'язково
                                 .alignmentGuide(.center as HorizontalAlignment) { d in d[.trailing] }
                                 .padding(.trailing, 10)
                         }

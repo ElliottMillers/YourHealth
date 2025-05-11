@@ -14,8 +14,7 @@ struct ActivityCardView: View {
     @State var viewModel: ActivityViewModel
     
     var body: some View {
-        
-        VStack{
+        VStack(alignment: .leading) {
             HStack(alignment: .top){
                 VStack(alignment: .leading, spacing: 8){
                     Text(viewModel.title)
@@ -26,17 +25,18 @@ struct ActivityCardView: View {
                 Spacer()
                 
                 Image(systemName: viewModel.image)
+                    .font(.system(size: 26.8))
                     .foregroundStyle(Color.green)
             }
+            Spacer()
             Text(viewModel.amount)
                 .font(.title)
                 .bold()
-                .padding()
                 .foregroundStyle(Color.glassTextPrimary)
         }
         .padding()
         .background(
-            // 💡 Glassmorphism Effect
+            // Glassmorphism Effect
             RoundedRectangle(cornerRadius: 25)
                 .fill(.ultraThinMaterial)
                 .background(
